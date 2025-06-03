@@ -1,13 +1,13 @@
 
-from connection import database_connection
-from read_file import read_csv_in_chunks
+from .connection import database_connection
+from database_connection_operations.read_file import read_csv_in_chunks
 
 file_path = 'customers.csv' 
 
 def insert_data_into_table():
     conn = database_connection()
     if conn is None:
-        print("❌ Failed to connect to the database. Exiting.")
+        print(" Failed to connect to the database. Exiting.")
         return
     cursor = conn.cursor()
 
